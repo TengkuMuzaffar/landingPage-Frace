@@ -1,4 +1,4 @@
-baseURL = "http://localhost/"
+baseURL = "https://tengkumuzaffar.github.io/landingPage-Frace/"
 languageCode = "en-us"
 title = "Food Tracing System"
 disableKinds = ["taxonomy", "taxonomyTerm"]
