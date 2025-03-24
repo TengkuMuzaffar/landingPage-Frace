@@ -1,0 +1,16 @@
+baseURL = "http://localhost/"
+languageCode = "en-us"
+title = "Food Tracing System"
+disableKinds = ["taxonomy", "taxonomyTerm"]
+
+[params]
+  description = "Ensuring Food Safety from Farm to Table"
+  author = "Food Tracing System"
+
+[build]
+  writeStats = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

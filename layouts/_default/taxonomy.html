@@ -1,0 +1,24 @@
+{{ define "main" }}
+<section class="section bg-white">
+    <div class="container">
+        <h1 class="heading-lg mb-8">{{ .Title }}</h1>
+        <div class="prose prose-lg max-w-none mb-12">
+            {{ .Content }}
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {{ range .Pages }}
+            <div class="bg-gray-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
+                <h2 class="text-xl font-bold mb-3">
+                    <a href="{{ .Permalink }}" class="text-gray-900 hover:text-primary">{{ .Title }}</a>
+                </h2>
+                {{ if .Description }}
+                <p class="text-gray-600 mb-4">{{ .Description }}</p>
+                {{ end }}
+                <a href="{{ .Permalink }}" class="text-primary font-medium hover:underline">Read more →</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

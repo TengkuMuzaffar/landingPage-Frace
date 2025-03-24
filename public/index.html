@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="generator" content="Hugo 0.141.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Tracing System - Ensuring Food Safety from Farm to Table | My New Hugo Site</title>
+    <meta name="description" content="Our blockchain-powered tracing system provides complete transparency and accountability throughout the entire food supply chain.">
+    
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    
+    
+    <script defer src="https://unpkg.com/alpinejs@3.12.3/dist/cdn.min.js"></script>
+    
+    
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    
+    
+    <link rel="stylesheet" href="/css/main.min.4dca0d9a2c588a314918a176c405c3f204a779830bf11b5cda228ea50dd67079.css">
+    
+    
+</head>
+<body class="font-sans text-gray-800 antialiased">
+    <header class="bg-white shadow-sm sticky top-0 z-50" x-data="navigation">
+    <div class="container flex items-center justify-between py-4">
+        <a href="/" class="">
+            <img src="/images/hero/logo.png" alt="Food Tracing System Logo" class="h-12">
+        </a>
+        
+        
+        <button @click="toggle()" class="md:hidden text-gray-500 hover:text-gray-700">
+            <i class="bi" :class="open ? 'bi-x-lg' : 'bi-list'"></i>
+        </button>
+        
+        
+        <nav class="hidden md:flex items-center space-x-8">
+            <a href="#how-it-works" class="text-gray-600 hover:text-primary transition-colors">How It Works</a>
+            <a href="#trust-security" class="text-gray-600 hover:text-primary transition-colors">Trust & Security</a>
+            <a href="#team" class="text-gray-600 hover:text-primary transition-colors">Our Team</a>
+            <a href="#map-section" class="text-gray-600 hover:text-primary transition-colors">Tracking Map</a>
+            <a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            <a href="#" class="btn-primary">Get Started</a>
+        </nav>
+        
+        
+        <nav x-show="open" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 -translate-y-4"
+             x-transition:enter-end="opacity-100 translate-y-0"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 translate-y-0"
+             x-transition:leave-end="opacity-0 -translate-y-4"
+             class="absolute top-full left-0 right-0 bg-white shadow-md p-4 md:hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#how-it-works" @click="open = false" class="text-gray-600 hover:text-primary transition-colors">How It Works</a>
+                <a href="#trust-security" @click="open = false" class="text-gray-600 hover:text-primary transition-colors">Trust & Security</a>
+                <a href="#team" @click="open = false" class="text-gray-600 hover:text-primary transition-colors">Our Team</a>
+                <a href="#map-section" @click="open = false" class="text-gray-600 hover:text-primary transition-colors">Tracking Map</a>
+                <a href="#contact" @click="open = false" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+                <a href="#" @click="open = false" class="btn-primary text-center">Get Started</a>
+            </div>
+        </nav>
+    </div>
+</header>
+    
+    <main>
+        
+    <section class="relative bg-gray-900 text-white overflow-hidden">
+    
+    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('/images/hero/hero.jpg'); z-index: 1;"></div>
+    
+    
+    <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/70" style="z-index: 2;"></div>
+    
+    
+    <div class="container relative py-20 md:py-32" style="z-index: 3;">
+        <div class="max-w-2xl fade-in">
+            <h1 class="heading-xl mb-6 text-white">Ensuring Food Safety from Farm to Table</h1>
+            <p class="text-xl mb-8 text-gray-200">Our blockchain-powered tracing system provides complete transparency and accountability throughout the entire food supply chain.</p>
+            <div class="flex flex-wrap gap-4">
+                <a href="#how-it-works" class="btn-primary">Learn More</a>
+                <a href="#contact" class="btn border-2 border-white text-white hover:bg-white hover:text-gray-900">Get Started</a>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="absolute bottom-0 left-0 right-0" style="z-index: 4;">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" class="w-full h-auto">
+            <path fill="#ffffff" fill-opacity="1" d="M0,64L80,69.3C160,75,320,85,480,80C640,75,800,53,960,48C1120,43,1280,53,1360,58.7L1440,64L1440,120L1360,120C1280,120,1120,120,960,120C800,120,640,120,480,120C320,120,160,120,80,120L0,120Z"></path>
+        </svg>
+    </div>
+</section>
+    <section id="how-it-works" class="section bg-white">
+    <div class="container">
+        <div class="text-center mb-16">
+            <h2 class="heading-lg mb-4">How Our Food Tracing System Works</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Track every step of the food journey with our innovative blockchain technology</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="bg-gray-50 rounded-xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
+                    <i class="bi bi-tree text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Farm Production</h3>
+                <p class="text-gray-600">We record detailed information about farming practices, harvesting conditions, and initial quality checks.</p>
+            </div>
+            
+            
+            <div class="bg-gray-50 rounded-xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
+                    <i class="bi bi-box text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Processing & Packaging</h3>
+                <p class="text-gray-600">Every processing step is documented, including temperature controls, handling procedures, and packaging details.</p>
+            </div>
+            
+            
+            <div class="bg-gray-50 rounded-xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
+                    <i class="bi bi-truck text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Distribution</h3>
+                <p class="text-gray-600">Track transportation routes, storage conditions, and delivery timelines throughout the distribution network.</p>
+            </div>
+            
+            
+            <div class="bg-gray-50 rounded-xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6">
+                    <i class="bi bi-house-door text-3xl"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-3">Consumer Delivery</h3>
+                <p class="text-gray-600">Consumers can scan product QR codes to view the complete journey of their food from farm to table.</p>
+            </div>
+        </div>
+        
+        <div class="mt-16 text-center">
+            <a href="#" class="btn-primary">Learn More About Our Process</a>
+        </div>
+    </div>
+</section>
+    <section id="trust-security" class="section bg-gray-50">
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1">
+                <h2 class="heading-lg mb-6">Trust & Security at Every Step</h2>
+                <p class="text-lg text-gray-600 mb-8">Our blockchain-powered system ensures that every piece of data is immutable, verifiable, and transparent. We're committed to building trust throughout the entire food supply chain.</p>
+                
+                <div class="space-y-6">
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="bi bi-shield-check text-primary text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Tamper-Proof Records</h3>
+                            <p class="text-gray-600">Once data is recorded on our blockchain, it cannot be altered or deleted, ensuring complete data integrity.</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="bi bi-lock text-primary text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">End-to-End Encryption</h3>
+                            <p class="text-gray-600">All data is encrypted using industry-leading protocols to protect sensitive information.</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="bi bi-search text-primary text-3xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Complete Transparency</h3>
+                            <p class="text-gray-600">Consumers and partners can verify the authenticity and journey of any product in our system.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="order-1 lg:order-2">
+                <div class="bg-white rounded-xl shadow-xl p-8">
+                    <h3 class="text-xl font-bold mb-6 text-center">Trusted by Industry Leaders</h3>
+                    
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                        
+                        <div class="flex flex-col items-center">
+                            <i class="bi bi-patch-check-fill text-primary text-4xl mb-3"></i>
+                            <span class="text-sm font-medium text-center">USDA Certified</span>
+                        </div>
+                        
+                        
+                        <div class="flex flex-col items-center">
+                            <i class="bi bi-award-fill text-primary text-4xl mb-3"></i>
+                            <span class="text-sm font-medium text-center">ISO 22000</span>
+                        </div>
+                        
+                        
+                        <div class="flex flex-col items-center">
+                            <i class="bi bi-check-circle-fill text-primary text-4xl mb-3"></i>
+                            <span class="text-sm font-medium text-center">FDA Approved</span>
+                        </div>
+                        
+                        
+                        <div class="flex flex-col items-center">
+                            <i class="bi bi-shield-fill-check text-primary text-4xl mb-3"></i>
+                            <span class="text-sm font-medium text-center">HACCP Compliant</span>
+                        </div>
+                        
+                        
+                        <div class="flex flex-col items-center">
+                            <i class="bi bi-globe text-primary text-4xl mb-3"></i>
+                            <span class="text-sm font-medium text-center">Global G.A.P.</span>
+                        </div>
+                        
+                        
+                        <div class="flex flex-col items-center">
+                            <i class="bi bi-heart-fill text-primary text-4xl mb-3"></i>
+                            <span class="text-sm font-medium text-center">Organic Certified</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="team" class="section bg-white">
+    <div class="container">
+        <div class="text-center mb-16">
+            <h2 class="heading-lg mb-4">Our Expert Team</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Meet the talented individuals who are passionate about revolutionizing food tracing systems</p>
+        </div>
+        
+        <div x-data="teamMembers" class="relative">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <template x-for="(member, index) in team" :key="member.id">
+                    <div class="bg-gray-50 rounded-xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        
+                        <div class="mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary shadow-lg" style="width: 120px; height: 120px;">
+                            <img 
+                                class="w-full h-full object-cover object-center" 
+                                :src="member.image" 
+                                :alt="member.name + ' Avatar'"
+                                onerror="this.src='/images/team/placeholder.jpg'"
+                            >
+                        </div>
+                        
+                        <h3 class="text-xl font-bold mb-2" x-text="member.name"></h3>
+                        <p class="text-primary font-medium mb-4" x-text="member.role"></p>
+                        <p class="text-gray-600 mb-6" x-text="member.shortBio"></p>
+                        
+                        <ul class="flex justify-center space-x-4">
+                            <li>
+                                <a :href="member.twitter" class="text-[#00acee] hover:text-primary transition-colors duration-200">
+                                    <i class="bi bi-twitter text-xl"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a :href="member.linkedin" class="text-[#0e76a8] hover:text-primary transition-colors duration-200">
+                                    <i class="bi bi-linkedin text-xl"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a :href="`mailto:${member.email}`" class="text-gray-700 hover:text-primary transition-colors duration-200">
+                                    <i class="bi bi-envelope-fill text-xl"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <section id="contact" class="section bg-white">
+    <div class="container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+            
+            <div>
+                <h2 class="heading-lg mb-6">Get in Touch</h2>
+                <p class="text-gray-600 mb-8">Have questions about our food tracing system? Reach out to our team for more information.</p>
+                
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="John Smith">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="john@example.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
+                        <input type="text" id="company" name="company" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Your Company">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="How can we help you?"></textarea>
+                    </div>
+                    
+                    <div>
+                        <button type="submit" class="btn-primary w-full">Send Message</button>
+                    </div>
+                </form>
+            </div>
+            
+            
+            <div>
+                <div class="bg-gray-50 rounded-xl p-8 mb-8">
+                    <h3 class="text-xl font-bold mb-6">Subscribe to Our Updates</h3>
+                    <p class="text-gray-600 mb-6">Stay informed about the latest developments in food safety and traceability.</p>
+                    
+                    <form class="flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
+                        <button type="submit" class="btn-primary whitespace-nowrap">Subscribe</button>
+                    </form>
+                </div>
+                
+                <div class="space-y-6">
+                    <h3 class="text-xl font-bold mb-4">Contact Information</h3>
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="bi bi-geo-alt text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Address</h4>
+                            <p class="text-gray-600">123 Food Safety Street, Tech City, TC 12345</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="bi bi-envelope text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Email</h4>
+                            <p class="text-gray-600">info@foodtracingsystem.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 mr-4">
+                            <i class="bi bi-telephone text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Phone</h4>
+                            <p class="text-gray-600">+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-4">
+                        <h4 class="font-bold mb-3">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-600 hover:text-primary text-2xl"><i class="bi bi-facebook"></i></a>
+                            <a href="#" class="text-gray-600 hover:text-primary text-2xl"><i class="bi bi-twitter"></i></a>
+                            <a href="#" class="text-gray-600 hover:text-primary text-2xl"><i class="bi bi-linkedin"></i></a>
+                            <a href="#" class="text-gray-600 hover:text-primary text-2xl"><i class="bi bi-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    </main>
+    
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <div class="container">
+        
+        
+        <div class="border-t border-gray-800 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2023 Food Tracing System. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-primary text-sm">Terms</a>
+                    <a href="#" class="text-gray-400 hover:text-primary text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-primary text-sm">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    
+    
+    
+    <script src="/js/main.min.6e16690fd82263aab936b217882841189ce7c4e4f7b1b6099cde2cfb8308a8f2.js"></script>
+    
+    
+</body>
+</html>

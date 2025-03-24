@@ -1,0 +1,48 @@
+<section id="team" class="section bg-white">
+    <div class="container">
+        <div class="text-center mb-16">
+            <h2 class="heading-lg mb-4">Our Expert Team</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Meet the talented individuals who are passionate about revolutionizing food tracing systems</p>
+        </div>
+        
+        <div x-data="teamMembers" class="relative">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <template x-for="(member, index) in team" :key="member.id">
+                    <div class="bg-gray-50 rounded-xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                        <!-- Circular Image Container with primary color border -->
+                        <div class="mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary shadow-lg" style="width: 120px; height: 120px;">
+                            <img 
+                                class="w-full h-full object-cover object-center" 
+                                :src="member.image" 
+                                :alt="member.name + ' Avatar'"
+                                onerror="this.src='/images/team/placeholder.jpg'"
+                            >
+                        </div>
+                        <!-- Member Details -->
+                        <h3 class="text-xl font-bold mb-2" x-text="member.name"></h3>
+                        <p class="text-primary font-medium mb-4" x-text="member.role"></p>
+                        <p class="text-gray-600 mb-6" x-text="member.shortBio"></p>
+                        <!-- Social Icons -->
+                        <ul class="flex justify-center space-x-4">
+                            <li>
+                                <a :href="member.twitter" class="text-[#00acee] hover:text-primary transition-colors duration-200">
+                                    <i class="bi bi-twitter text-xl"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a :href="member.linkedin" class="text-[#0e76a8] hover:text-primary transition-colors duration-200">
+                                    <i class="bi bi-linkedin text-xl"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a :href="`mailto:${member.email}`" class="text-gray-700 hover:text-primary transition-colors duration-200">
+                                    <i class="bi bi-envelope-fill text-xl"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</section>
