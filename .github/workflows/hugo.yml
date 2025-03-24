@@ -34,9 +34,9 @@ jobs:
       - name: Build
         run: hugo --minify
       
-      # Add explicit upload-artifact action
+      # Updated to use v4 instead of v3
       - name: Upload build artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: hugo-build
           path: ./public
