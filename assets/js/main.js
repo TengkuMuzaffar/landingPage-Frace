@@ -90,11 +90,21 @@ document.addEventListener('alpine:init', () => {
         },
         {
           id: 5,
+          name: 'Nurul Mahirah',
+          role: 'Developer Team',
+          image: '/images/team/hyra.png',
+          shortBio: 'Ensures our solutions meet the real needs of users across the food supply chain.',
+          linkedin: 'https://www.linkedin.com/in/tengkumuzaffar/',
+          twitter: 'https://twitter.com/',
+          email: 'lakshmi@foodtracingsystem.com'
+        },
+        {
+          id: 6,
           name: 'Tengku Muzaffar',
           role: 'Developer Team',
           image: '/images/team/muz.png',
           shortBio: 'Ensures our solutions meet the real needs of users across the food supply chain.',
-          linkedin: 'https://www.linkedin.com/in/tengkumuzaffar/',
+          linkedin: 'https://www.linkedin.com/in/nurul-mahirah-6b8160290/',
           twitter: 'https://twitter.com/',
           email: 'lakshmi@foodtracingsystem.com'
         }
