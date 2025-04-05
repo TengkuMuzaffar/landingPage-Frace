@@ -1,93 +1,106 @@
-<section id="contact" class="section bg-white">
+<section id="contact" class="section bg-gradient-to-b from-white to-gray-50">
     <div class="container">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <!-- Contact Form -->
-            <div>
-                <h2 class="heading-lg mb-6">Get in Touch</h2>
-                <p class="text-gray-600 mb-8">Have questions about our food tracing system? Reach out to our team for more information.</p>
-                
-                <form class="space-y-6">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                            <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="John Smith">
-                        </div>
-                        <div>
-                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
-                            <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="john@example.com">
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name</label>
-                        <input type="text" id="company" name="company" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="Your Company">
-                    </div>
-                    
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary" placeholder="How can we help you?"></textarea>
-                    </div>
-                    
-                    <div>
-                        <button type="submit" class="btn-primary w-full">Send Message</button>
-                    </div>
-                </form>
+        <!-- Section Header -->
+        <div class="text-center mb-10">
+            <h2 class="heading-lg text-gray-900 mb-4">Get In Touch</h2>
+            <div class="mx-auto max-w-3xl">
+                <p class="text-gray-600 text-lg">Have questions about our food tracing system? Our startup team is ready to collaborate and discuss how our solution can revolutionize your business.</p>
             </div>
-            
-            <!-- Subscription & Contact Info -->
-            <div>
-                <div class="bg-gray-50 rounded-xl p-8 mb-8">
-                    <h3 class="text-xl font-bold mb-6">Subscribe to Our Updates</h3>
-                    <p class="text-gray-600 mb-6">Stay informed about the latest developments in food safety and traceability.</p>
-                    
-                    <form class="flex flex-col sm:flex-row gap-4">
-                        <input type="email" placeholder="Your email address" class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-primary focus:border-primary">
-                        <button type="submit" class="btn-primary whitespace-nowrap">Subscribe</button>
-                    </form>
+        </div>
+        
+        <!-- Two-column Contact Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Left Column - Contact Information -->
+            <div class="space-y-6">
+                <!-- Email Contact -->
+                <div class="bg-white rounded-lg shadow-sm p-6 flex items-center">
+                    <div class="flex-shrink-0 mr-5">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                            <i class="bi bi-envelope text-xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-1">Email Us</h3>
+                        <a href="mailto:fracetech24@gmail.com" class="text-primary hover:underline">fracetech24@gmail.com</a>
+                    </div>
                 </div>
                 
-                <div class="space-y-6">
-                    <h3 class="text-xl font-bold mb-4">Contact Information</h3>
-                    
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 mr-4">
-                            <i class="bi bi-geo-alt text-primary text-2xl"></i>
+                <!-- Phone Contact -->
+                <div class="bg-white rounded-lg shadow-sm p-6 flex items-center">
+                    <div class="flex-shrink-0 mr-5">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                            <i class="bi bi-telephone text-xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-1">Call Us</h3>
+                        <a href="tel:+15551234567" class="text-primary hover:underline">+1 (555) 123-4567</a>
+                    </div>
+                </div>
+                
+                <!-- Address Contact -->
+                <div class="bg-white rounded-lg shadow-sm p-6 flex items-center">
+                    <div class="flex-shrink-0 mr-5">
+                        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                            <i class="bi bi-geo-alt text-xl"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-1">Our Address</h3>
+                        <address class="not-italic text-gray-600">123 Innovation Hub, Tech District<br>Kuala Lumpur, Malaysia</address>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - Social Media -->
+            <div class="bg-white rounded-lg shadow-sm p-8">
+                <h3 class="text-xl font-bold mb-6 text-center">Connect With Our Team</h3>
+                
+                <!-- Social Media Grid -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- LinkedIn -->
+                    <a href="#" class="group flex items-center p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-[#0077B5]/10 text-[#0077B5] flex items-center justify-center mr-4">
+                            <i class="bi bi-linkedin text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold">Address</h4>
-                            <p class="text-gray-600">123 Food Safety Street, Tech City, TC 12345</p>
+                            <h4 class="font-bold">LinkedIn</h4>
+                            <p class="text-sm text-gray-500">Professional updates</p>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 mr-4">
-                            <i class="bi bi-envelope text-primary text-2xl"></i>
+                    <!-- Twitter -->
+                    <a href="#" class="group flex items-center p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-[#1DA1F2]/10 text-[#1DA1F2] flex items-center justify-center mr-4">
+                            <i class="bi bi-twitter text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold">Email</h4>
-                            <p class="text-gray-600">info@foodtracingsystem.com</p>
+                            <h4 class="font-bold">Twitter</h4>
+                            <p class="text-sm text-gray-500">Latest news</p>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0 mr-4">
-                            <i class="bi bi-telephone text-primary text-2xl"></i>
+                    <!-- Instagram -->
+                    <a href="#" class="group flex items-center p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-[#E4405F]/10 text-[#E4405F] flex items-center justify-center mr-4">
+                            <i class="bi bi-instagram text-xl"></i>
                         </div>
                         <div>
-                            <h4 class="font-bold">Phone</h4>
-                            <p class="text-gray-600">+1 (555) 123-4567</p>
+                            <h4 class="font-bold">Instagram</h4>
+                            <p class="text-sm text-gray-500">Visual stories</p>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="pt-4">
-                        <h4 class="font-bold mb-3">Follow Us</h4>
-                        <div class="flex space-x-4">
-                            <a href="#" class="text-gray-600 hover:text-primary text-2xl"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-primary text-2xl"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-primary text-2xl"><i class="bi bi-linkedin"></i></a>
-                            <a href="#" class="text-gray-600 hover:text-primary text-2xl"><i class="bi bi-instagram"></i></a>
+                    <!-- GitHub -->
+                    <a href="#" class="group flex items-center p-4 rounded-lg hover:bg-gray-50 transition-colors">
+                        <div class="w-12 h-12 rounded-full bg-[#333]/10 text-[#333] flex items-center justify-center mr-4">
+                            <i class="bi bi-github text-xl"></i>
                         </div>
-                    </div>
+                        <div>
+                            <h4 class="font-bold">GitHub</h4>
+                            <p class="text-sm text-gray-500">Open source</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

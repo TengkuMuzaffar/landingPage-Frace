@@ -23,6 +23,10 @@
     <!-- Alpine.js -->
     <script defer src="https://unpkg.com/alpinejs@3.12.3/dist/cdn.min.js"></script>
     
+    <!-- Main JS -->
+    {{ $js := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
+    <script defer src="{{ $js.RelPermalink }}"></script>
+    
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     
@@ -41,7 +45,7 @@
     
     {{ partial "footer.html" . }}
     
-    <!-- Main JS -->
+    <!-- Remove this from bottom of body -->
     {{ $js := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
     <script src="{{ $js.RelPermalink }}"></script>
     

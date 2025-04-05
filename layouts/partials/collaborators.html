@@ -1,0 +1,45 @@
+<section id="collaborators" class="section bg-white relative">
+    <!-- Background image with overlay -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-black/80 z-10"></div>
+        <img src="/images/bg_img/collab_bg.webp" alt="Collaboration Background" class="w-full h-full object-cover object-center opacity-40">
+    </div>
+    
+    <div class="container relative">
+        <!-- Section Header with Accent Line -->
+        <div class="text-center mb-8 md:mb-16 relative">
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-16 md:w-24 h-1 bg-primary rounded-full -top-4"></div>
+            <h2 class="heading-lg text-white mb-3 md:mb-4">Strategic Partners</h2>
+            <div class="mx-auto max-w-3xl px-4">
+                <p class="text-gray-200 text-base md:text-lg">Collaborating with industry leaders to transform food traceability and build a more transparent future</p>
+            </div>
+        </div>
+        
+        <!-- Enhanced Logo Carousel - Responsive with 2 rows on mobile -->
+        <div class="relative overflow-hidden py-8 md:py-12" x-data="collaboratorLogos">
+            <!-- Desktop/Tablet Single Row Carousel -->
+            <div class="hidden sm:flex logo-carousel items-center">
+                <template x-for="(logo, index) in logos" :key="index">
+                    <div class="logo-slide flex-shrink-0 mx-4 sm:mx-6 md:mx-10 w-32 sm:w-40 md:w-48 h-16 sm:h-20 md:h-24 flex items-center justify-center group">
+                        <div class="relative p-3 sm:p-4 md:p-6 bg-white/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 w-full h-full flex items-center justify-center">
+                            <img :src="logo.image" :alt="logo.name" class="max-h-10 sm:max-h-12 md:max-h-16 max-w-full transition-all duration-500">
+                            <div class="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-lg transition-all duration-300"></div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            
+            <!-- Mobile Two-Row Grid -->
+            <div class="sm:hidden grid grid-cols-2 gap-4 px-2">
+                <template x-for="(logo, index) in mobileLogos" :key="index">
+                    <div class="logo-slide flex-shrink-0 w-full h-20 flex items-center justify-center group">
+                        <div class="relative p-3 bg-white/90 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 w-full h-full flex items-center justify-center">
+                            <img :src="logo.image" :alt="logo.name" class="max-h-10 max-w-full transition-all duration-500">
+                            <div class="absolute inset-0 border-2 border-transparent group-hover:border-primary rounded-lg transition-all duration-300"></div>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,45 +1,65 @@
-<section id="team" class="section bg-white">
+<section id="team" class="section bg-gradient-to-b from-gray-50 to-white">
     <div class="container">
         <div class="text-center mb-16">
-            <h2 class="heading-lg mb-4">Our Expert Team</h2>
+            <div class="inline-block relative mb-4">
+                <h2 class="heading-lg mb-2 relative z-10">Our Expert Team</h2>
+                <div class="absolute -bottom-2 left-0 w-full h-3 bg-primary/20 -z-10 transform -rotate-1"></div>
+            </div>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto">Meet the talented individuals who are passionate about revolutionizing food tracing systems</p>
         </div>
         
         <div x-data="teamMembers" class="relative">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <template x-for="(member, index) in team" :key="member.id">
-                    <div class="bg-gray-50 rounded-xl p-8 text-center transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                        <!-- Circular Image Container with primary color border -->
-                        <div class="mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary shadow-lg" style="width: 120px; height: 120px;">
-                            <img 
-                                class="w-full h-full object-cover object-center" 
-                                :src="member.image" 
-                                :alt="member.name + ' Avatar'"
-                                onerror="this.src='/images/team/placeholder.jpg'"
-                            >
+                    <div class="team-card-container">
+                        <div class="team-card" :class="{'is-flipped': flippedCards.includes(member.id)}" @click="flipCard(member.id)">
+                            <!-- Front of card -->
+                            <div class="team-card-front p-6">
+                                <!-- Circular Image Container -->
+                                <div class="team-avatar mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary shadow-lg" style="width: 120px; height: 120px;">
+                                    <img 
+                                        class="w-full h-full object-cover object-center" 
+                                        :src="member.image" 
+                                        :alt="member.name + ' Avatar'"
+                                        onerror="this.src='/images/team/placeholder.jpg'"
+                                    >
+                                </div>
+                                
+                                <!-- Member Details -->
+                                <h3 class="text-xl font-bold mb-2 text-gray-800" x-text="member.name"></h3>
+                                <p class="text-primary font-medium mb-3" x-text="member.role"></p>
+                                <p class="text-gray-600 text-sm mb-4" x-text="member.shortBio"></p>
+                                
+                                <!-- Social Icons -->
+                                <div class="flex justify-center space-x-4 mt-4">
+                                    <a :href="member.linkedin" class="social-icon text-gray-400 hover:text-[#0e76a8]" @click.stop>
+                                        <i class="bi bi-linkedin text-xl"></i>
+                                    </a>
+                                    <a :href="`mailto:${member.email}`" class="social-icon text-gray-400 hover:text-primary" @click.stop>
+                                        <i class="bi bi-envelope-fill text-xl"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <!-- Back of card -->
+                            <div class="team-card-back">
+                                <h3 class="text-xl font-bold mb-4 text-primary" x-text="member.name"></h3>
+                                <h4 class="font-medium mb-4 text-gray-700">Project Responsibilities</h4>
+                                
+                                <ul class="space-y-2 text-sm text-left mb-6">
+                                    <template x-for="(task, i) in member.tasks">
+                                        <li class="flex items-start">
+                                            <span class="text-primary mr-2">•</span>
+                                            <span x-text="task"></span>
+                                        </li>
+                                    </template>
+                                </ul>
+                                
+                                <button class="mt-4 text-sm text-gray-500 hover:text-primary transition-colors" @click.stop="flipCard(member.id)">
+                                    <i class="bi bi-arrow-left mr-1"></i> Back
+                                </button>
+                            </div>
                         </div>
-                        <!-- Member Details -->
-                        <h3 class="text-xl font-bold mb-2" x-text="member.name"></h3>
-                        <p class="text-primary font-medium mb-4" x-text="member.role"></p>
-                        <p class="text-gray-600 mb-6" x-text="member.shortBio"></p>
-                        <!-- Social Icons -->
-                        <ul class="flex justify-center space-x-4">
-                            <li>
-                                <a :href="member.twitter" class="text-[#00acee] hover:text-primary transition-colors duration-200">
-                                    <i class="bi bi-twitter text-xl"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a :href="member.linkedin" class="text-[#0e76a8] hover:text-primary transition-colors duration-200">
-                                    <i class="bi bi-linkedin text-xl"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a :href="`mailto:${member.email}`" class="text-gray-700 hover:text-primary transition-colors duration-200">
-                                    <i class="bi bi-envelope-fill text-xl"></i>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </template>
             </div>
