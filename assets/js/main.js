@@ -276,7 +276,7 @@ document.addEventListener('alpine:init', () => {
             thumbnail: '/images/gallery/lawatan_jakim.jpg',
             fullImage: '/images/gallery/lawatan_jakim.jpg',
             description: 'An official visit to JAKIM headquarters to discuss halal certification integration with our food tracing system. The meeting focused on establishing protocols for digital verification of halal compliance throughout the supply chain.',
-            partners: ['JAKIM', 'MAIJ'],
+            partners: ['JAKIM', 'ISWAJ UTHM', 'PAYNET Malaysia'],
             achievements: [
               'Established framework for digital halal certification',
               'Agreed on API integration for real-time verification',
@@ -291,7 +291,7 @@ document.addEventListener('alpine:init', () => {
             thumbnail: '/images/gallery/mars_global.jpg',
             fullImage: '/images/gallery/mars_global.jpg',
             description: 'Strategic partnership meeting with MARS Global to explore implementation of our food tracing technology in their international supply chain. The discussion centered on adapting our system to meet global standards and multi-regional requirements.',
-            partners: ['MARS Global Sdn. Bhd.', 'RunCloud'],
+            partners: ['MARS Global Sdn. Bhd.', 'UTHM'],
             achievements: [
               'Identified key integration points for global supply chain',
               'Developed customization plan for international markets',
@@ -306,7 +306,7 @@ document.addEventListener('alpine:init', () => {
             thumbnail: '/images/gallery/bengkel_strategi.jpg',
             fullImage: '/images/gallery/bengkel_strategi.jpg',
             description: 'Participated in UTHM\'s strategic planning workshop for Johor 2025, focusing on technological innovation in food security and traceability. Our team presented the latest developments in our system and collaborated on future research initiatives.',
-            partners: ['UTHM', 'ISWAJ UTHM'],
+            partners: ['UTHM', 'ISWAJ UTHM', 'MAIJ', 'PAYNET Malaysia'],
             achievements: [
               'Secured academic research partnership for system enhancement',
               'Developed educational framework for student involvement',
@@ -321,13 +321,72 @@ document.addEventListener('alpine:init', () => {
             thumbnail: '/images/gallery/lawatan_vaterina.jpg',
             fullImage: '/images/gallery/lawatan_vaterina.jpg',
             description: 'Collaborative meeting with Veterinary Services Malaysia to integrate animal health and welfare tracking into our food tracing system. The discussion focused on livestock monitoring, disease prevention, and ensuring compliance with international standards.',
-            partners: ['Veterinary Services Malaysia', 'JandsCo'],
+            partners: ['Veterinary Services Malaysia', 'JandsCo', 'UTHM', 'PAYNET Malaysia'],
             achievements: [
               'Developed livestock tracking module specifications',
               'Established protocols for health certification integration',
               'Created framework for disease outbreak early warning system'
             ]
-          }
+          },
+          {
+            id: 5,
+            title: 'Strategic Planning Meeting with RunCloud',
+            category: 'meetings',
+            date: 'September 27, 2024',
+            thumbnail: '/images/gallery/online_meeting_runcloud.jpg',
+            fullImage: '/images/gallery/online_meeting_runcloud.jpg',
+            description: 'Virtual strategic planning session with RunCloud focusing on project execution, risk management, and implementation strategies. Key discussions included QR code integration, MVP requirements, and commercial partnership framework.',
+            partners: ['RunCloud'],
+            achievements: [
+              'Established comprehensive risk management framework',
+              'Defined QR code event trigger implementation strategy',
+              'Created project roadmap and MVP requirements',
+              'Initiated commercial partnership agreement',
+              'Aligned stakeholder communication channels'
+            ],
+            keyPoints: [
+              'Risk assessment and mitigation strategies',
+              'QR code technology integration plan',
+              'MVP scope definition',
+              'Use case documentation',
+              'Project roadmap development',
+              'Advisory support framework',
+              'Stakeholder engagement plan',
+              'Commercial agreement drafting'
+            ]
+          },
+          {
+            id: 6,
+            title: 'GBS Summit Networking Session',
+            category: 'meetings',
+            date: 'September 19, 2024',
+            thumbnail: '/images/gallery/gbs_summit_2024.jpg',
+            fullImage: '/images/gallery/gbs_summit_2024.jpg',
+            description: 'Productive networking session at the GBS Summit, establishing connections with REQA and CoolCode (RunCloud). Discussions centered around potential collaborations and technology integration opportunities.',
+            partners: ['PAYNET Malaysia', 'RunCloud'],
+            achievements: [
+              'Established strategic partnerships with CoolCode',
+              'Explored technology integration possibilities',
+              'Identified mutual growth opportunities',
+              'Created framework for future collaborations'
+            ]
+          },
+          {
+            id: 7,
+            title: 'Progress Meeting with Yayasan Zarith Sofea',
+            category: 'meetings',
+            date: 'September 18, 2024',
+            thumbnail: '/images/gallery/mesyuarat_zarith_sofea.jpg',
+            fullImage: '/images/gallery/mesyuarat_zarith_sofea.jpg',
+            description: 'Progress meeting with Yayasan Zarith Sofea to discuss project developments and future initiatives. The session focused on aligning our food tracing system with the foundation\'s community welfare objectives.',
+            partners: ['Yayasan Zarith Sofea'],
+            achievements: [
+              'Presented project milestones and progress updates',
+              'Identified community impact opportunities',
+              'Established framework for ongoing collaboration',
+              'Aligned system features with foundation objectives'
+            ]
+          },
         ],
         
         // Computed property for filtered gallery items
