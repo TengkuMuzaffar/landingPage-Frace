@@ -233,6 +233,25 @@
   cursor: pointer !important;
 }
 
+/* Flip indicator styles */
+.flip-indicator {
+  transition: all 0.3s ease !important;
+}
+
+.flip-indicator i {
+  animation: pulse-subtle 2s infinite !important;
+}
+
+@keyframes pulse-subtle {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.flip-hint {
+  transition: all 0.3s ease !important;
+}
+
 .team-avatar {
   position: relative !important;
   z-index: 1 !important;
@@ -297,6 +316,32 @@
   padding: 1.5rem !important;
 }
 
+/* Back button styling */
+.back-button {
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.back-button::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: var(--color-primary) !important;
+  opacity: 0 !important;
+  transform: translateY(100%) !important;
+  transition: all 0.3s ease !important;
+  z-index: -1 !important;
+  border-radius: 9999px !important;
+}
+
+.back-button:hover::before {
+  transform: translateY(0) !important;
+  opacity: 0.1 !important;
+}
+
 /* Hover effects */
 .team-card-container:hover .team-card:not(.is-flipped) {
   transform: translateY(-10px) rotateY(0deg) !important;
@@ -305,4 +350,96 @@
 
 .team-card:hover .team-avatar::before {
   opacity: 0.7 !important;
+}
+
+/* Contact section background animation */
+/* Add this after your existing styles */
+.contact-bg-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.contact-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.2;
+  z-index: 1;
+  mix-blend-mode: soft-light;
+}
+
+.circle-1 {
+  width: 80vh;
+  height: 80vh;
+  background: linear-gradient(180deg, var(--color-primary), rgba(46, 204, 113, 0.5));
+  animation: moveCircle1 4s cubic-bezier(0.4,0.1,0.2,1) infinite;
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+.circle-2 {
+  width: 100vh;
+  height: 100vh;
+  animation: moveCircle2 4s cubic-bezier(0.4,0.1,0.2,1) infinite alternate;
+  filter: blur(120px);
+  opacity: 0.3;
+}
+
+.contact-bg-blur {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(60px);
+  -webkit-backdrop-filter: blur(60px);
+  z-index: 2;
+  background: rgba(255,255,255,0.6);
+}
+
+@keyframes moveCircle1 {
+  0% {
+    transform: translateX(-150%) translateY(100%) scale(0.8);
+    opacity: 0.3;
+  }
+  30% {
+    transform: translateX(-30%) translateY(-40%) scale(1.1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: translateX(60%) translateY(20%) scale(0.9);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(120%) translateY(100%) scale(0.7);
+    opacity: 0.3;
+  }
+}
+
+@keyframes moveCircle2 {
+  0% {
+    transform: translateX(-100%) translateY(80%) scale(0.9);
+    background: linear-gradient(180deg, var(--color-primary), rgba(46, 204, 113, 0.1));
+  }
+  50% {
+    transform: translateX(20%) translateY(-30%) scale(1.2);
+    background: linear-gradient(180deg, rgba(46, 204, 113, 0.8), var(--color-primary));
+  }
+  100% {
+    transform: translateX(120%) translateY(80%) scale(0.9);
+    background: linear-gradient(180deg, var(--color-primary), rgba(46, 204, 113, 0.1));
+  }
+}
+
+/* Add this to your contact section */
+#contact {
+  position: relative;
+  isolation: isolate;
+}
+
+#contact .container {
+  position: relative;
+  z-index: 10;
 }
